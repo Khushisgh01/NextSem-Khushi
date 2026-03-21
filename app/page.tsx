@@ -1,5 +1,5 @@
-import Navbar from "./components/Navigation/Navbar";
-import Footer from "./components/Navigation/Footer";
+import Navbar from "./Pages/navigation/Navbar";
+import Footer from "./Pages/navigation/Footer";
 import Features from "./components/home/Features";
 import JoinTeam from "./components/home/JoinTeamSection/JoinTeam";
 import HeroCards from "./components/home/herocards";
