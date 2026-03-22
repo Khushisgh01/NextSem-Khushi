@@ -19,11 +19,13 @@ const Footer = () => {
 
   const footerLinks = {
     tools: [
+
       { name: "Semester Planner",       href: "/tools/sem-planner" },
       { name: "Design Mania",           href: "/tools/design" },
       { name: "CGPA Calculator",        href: "/tools/gpa-calculator" },
       { name: "Attendance Calculator",  href: "/tools/attendance-calculator" },
       { name: "Resource Vault",         href: "/tools/resources" },
+
     ],
     guidance: [
       { name: "Senior Connect",             href: "/guidance/senior-connect" },

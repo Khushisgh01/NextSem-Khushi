@@ -34,20 +34,36 @@ export default function Navbar() {
     "Response Forum": MessageSquare,
   };
 
+  const featureUrlMap: Record<string, string> = {
+    "Semester Planner": "/semester-planner",
+    "Design Mania": "/design-mania",
+    "CGPA Calculator": "/cgpa-calculator",
+    "Attendance Calculator": "/attendance-calculator",
+    "Resource Vault": "/resource-vault",
+    "Senior Connect": "/senior-connect",
+    "College Process Explainer": "/college-process-explainer",
+    "Do’s & Don’ts": "/dos-and-donts",
+    "Buddy Matcher": "/buddy-matcher",
+    "Response Forum": "/response-forum",
+  };
+
   const renderItem = (item: string) => {
     const Icon = featureIcons[item];
+    const href = featureUrlMap[item] ?? "#";
+
     return (
-      <motion.li
-        key={item}
-        whileHover={{ scale: 1.03, x: 4 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="flex items-center gap-2 cursor-pointer rounded-md px-2 py-1 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
-      >
-        <motion.div whileHover={{ rotate: 5 }}>
-          <Icon size={16} className="text-zinc-500" />
-        </motion.div>
-        <span>{item}</span>
-      </motion.li>
+      <Link href={href} key={item} className="block">
+        <motion.li
+          whileHover={{ scale: 1.03, x: 4 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="flex items-center gap-2 cursor-pointer rounded-md px-2 py-1 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+        >
+          <motion.div whileHover={{ rotate: 5 }}>
+            <Icon size={16} className="text-zinc-500" />
+          </motion.div>
+          <span>{item}</span>
+        </motion.li>
+      </Link>
     );
   };
 
@@ -202,14 +218,16 @@ export default function Navbar() {
                 <div className="mt-2 ml-2 space-y-1">
                   {Object.keys(featureIcons).map((item) => {
                     const Icon = featureIcons[item];
+                    const href = featureUrlMap[item] ?? "#";
                     return (
-                      <div
+                      <Link
+                        href={href}
                         key={item}
                         className="flex items-center gap-2 px-2 py-1 rounded hover:bg-zinc-100"
                       >
                         <Icon size={16} className="text-zinc-500" />
                         <span>{item}</span>
-                      </div>
+                      </Link>
                     );
                   })}
                 </div>
