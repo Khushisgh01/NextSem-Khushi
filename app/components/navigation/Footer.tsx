@@ -25,7 +25,7 @@ const Footer = () => {
   const footerLinks = {
     tools: [
       { name: "Semester Planner", href: "#" },
-      { name: "Design Mania", href: "#" },
+      { name: "Design Mania", href: "/design-mania" },
       { name: "CGPA Calculator", href: "#" },
       { name: "Attendance Calculator", href: "#" },
       { name: "Resource Vault", href: "#" },
