@@ -18,7 +18,7 @@ function AnimatedWord() {
   }, []);
 
   return (
-    <span className="relative inline-flex justify-center min-w-[260px] h-[1.2em] overflow-hidden align-bottom">
+    <span className="relative inline-flex justify-center min-w-65 h-[1.2em] overflow-hidden align-bottom">
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}

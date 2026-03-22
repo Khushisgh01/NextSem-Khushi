@@ -40,12 +40,10 @@ const Footer = () => {
 
   return (
     <footer className="w-full flex flex-col font-sans overflow-hidden">
-
       {/* SECTION 1 */}
       <div className="bg-black text-white px-8 pt-16 pb-32 relative min-h-[500px]">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-row justify-between items-start w-full mb-16">
-
             {/* Tools */}
             <div className="w-1/3">
               <h3 className="text-2xl font-bold mb-4">Tools</h3>
@@ -78,7 +76,7 @@ const Footer = () => {
 
             {/* Peer Help */}
             <div className="w-1/3 flex justify-end">
-              <div className="text-left min-w-[180px]">
+              <div className="text-left min-w-45">
                 <h3 className="text-2xl font-bold mb-4">Peer Help</h3>
                 <ul className="space-y-2 text-base opacity-90">
                   {footerLinks.peerHelp.map((link) => (
@@ -91,7 +89,6 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -102,12 +99,16 @@ const Footer = () => {
 
         {/* Character */}
         <div className="absolute right-8 bottom-0 z-10">
-          <img src="/footer_img.png" alt="Character" className="w-[240px] h-auto" />
+          <img src="/footer_img.png" alt="Character" className="w-60 h-auto" />
         </div>
 
         {/* Bottom ellipse */}
         <div className="absolute bottom-0 left-0 w-full">
-          <img src="/footer_red_ellipse.png" alt="" className="w-full scale-110 translate-y-3" />
+          <img
+            src="/footer_red_ellipse.png"
+            alt=""
+            className="w-full scale-110 translate-y-3"
+          />
         </div>
       </div>
 
@@ -129,16 +130,23 @@ const Footer = () => {
       <div className="w-full bg-white border-t border-black/10">
         <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between text-sm text-black/70">
           <p>
-            © {new Date().getFullYear()} <span className="font-semibold text-black">NextSem</span>. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <span className="font-semibold text-black">NextSem</span>. All
+            rights reserved.
           </p>
           <div className="flex gap-5 mt-2 md:mt-0">
-            <a href="#" className="hover:text-black transition">Privacy</a>
-            <a href="#" className="hover:text-black transition">Terms</a>
-            <a href="#" className="hover:text-black transition">Contact</a>
+            <Link
+              href="/privacypolicy"
+              className="text-sm text-zinc-600 hover:text-black"
+            >
+              Privacy Policy
+            </Link>
+            <a href="/contact" className="hover:text-black transition">
+              Contact
+            </a>
           </div>
         </div>
       </div>
-
     </footer>
   );
 };

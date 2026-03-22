@@ -43,7 +43,7 @@ export default function Navbar() {
     "Senior Connect": "/senior-connect",
     "College Process Explainer": "/college-process-explainer",
     "Do’s & Don’ts": "/dos-and-donts",
-    "Buddy Matcher": "/buddy-matcher",
+    "Buddy Matcher": "/buddy-matching",
     "Response Forum": "/response-forum",
   };
 
@@ -68,7 +68,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full border-b border-zinc-200 bg-white px-4 py-3">
+    <nav className="w-full border-b border-zinc-200 bg-white px-4 py-3 fixed z-999">
       <div className="mx-auto flex max-w-6xl items-center justify-between font-medium text-zinc-900">
 
         {/* Logo */}
@@ -162,7 +162,7 @@ export default function Navbar() {
         </div>
 
         {/* Sign In */}
-        <Link href="/Authentication/Login" className="hidden md:block">
+        <Link href="/Authentication/login" className="hidden md:block">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
