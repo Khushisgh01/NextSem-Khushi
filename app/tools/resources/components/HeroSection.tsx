@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const animatedStats = [
@@ -104,7 +104,7 @@ export default function HeroSection() {
 
       <section className="relative bg-black text-white overflow-hidden rounded-3xl mb-10">
         {/* Floating decorative cards */}
-        <div className="absolute top-6 right-8 hidden lg:block">
+        {/* <div className="absolute top-6 right-8 hidden lg:block">
           <div className="float-1 px-3 py-2 bg-white text-black border-2 border-black rounded-xl text-sm font-black shadow-lg opacity-90">
             📝 DSA Notes
           </div>
@@ -123,7 +123,7 @@ export default function HeroSection() {
           <div className="float-1 px-3 py-2 bg-[#2979FF] text-white border-2 border-black rounded-xl text-sm font-black shadow-lg">
             🔬 Lab Manual
           </div>
-        </div>
+        </div> */}
 
         {/* Dotted pattern overlay */}
         <div
@@ -136,49 +136,79 @@ export default function HeroSection() {
         />
 
         {/* Main content */}
-        <div className="relative z-10 px-8 pt-14 pb-10 max-w-3xl">
-          {/* Eyebrow */}
-          <div className="hero-badges flex flex-wrap items-center gap-2 mb-5">
-            <span className="px-3 py-1 bg-white text-black text-xs font-black uppercase tracking-widest rounded-full">
-              🏛️ IGDTUW
-            </span>
-            <span className="px-3 py-1 border-2 border-white text-white text-xs font-black uppercase tracking-widest rounded-full">
-              Free Forever
-            </span>
-          </div>
+        {/* Main content */}
+        <div className="relative z-10 px-8 pt-5 pb-10 flex flex-col lg:flex-row items-end justify-between gap-10">
+          {" "}
+          {/* Left text — keep everything inside this new wrapper div */}
+          <div className="max-w-xl">
+            {/* Eyebrow */}
+            <div className="hero-badges flex flex-wrap items-center gap-2 mb-5">
+              <span className="px-3 py-1 bg-white text-black text-xs font-black uppercase tracking-widest rounded-full">
+                🏛️ IGDTUW
+              </span>
+              <span className="px-3 py-1 border-2 border-white text-white text-xs font-black uppercase tracking-widest rounded-full">
+                Free Forever
+              </span>
+            </div>
 
-          <h1 className="hero-h1 text-5xl md:text-6xl font-black leading-none tracking-tight mb-4">
-            Resource
-            <br />
-            <span className="relative inline-block">
-              Vault.
-              <span
-                className="absolute -bottom-1 left-0 h-2 w-full opacity-60"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FF4444, #FFB800, #00C853)",
-                }}
-              />
-            </span>
-          </h1>
+            <h1 className="hero-h1 text-5xl md:text-6xl font-black leading-none tracking-tight mb-4">
+              Resource
+              <br />
+              <span className="relative inline-block">
+                Vault.
+                <span
+                  className="absolute -bottom-1 left-0 h-2 w-full opacity-60"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FF4444, #FFB800, #00C853)",
+                  }}
+                />
+              </span>
+            </h1>
 
-          <p className="hero-sub text-lg text-gray-300 font-medium leading-relaxed mb-6 max-w-lg">
-            Every note, PYQ, and lab manual you need — curated by students, for
-            students of IGDTUW. Stop searching. Start studying.
-          </p>
+            <p className="hero-sub text-lg text-gray-300 font-medium leading-relaxed mb-6 max-w-lg">
+              Every note, PYQ, and lab manual you need — curated by students,
+              for students of IGDTUW. Stop searching. Start studying.
+            </p>
 
-          {/* Subject quick pills */}
-          <div className="hero-badges flex flex-wrap gap-2">
-            {["DSA", "OS", "DBMS", "COA", "CN", "ML", "Math III", "Python"].map(
-              (s, i) => (
+            {/* Subject quick pills */}
+            <div className="hero-badges flex flex-wrap gap-2">
+              {[
+                "DSA",
+                "OS",
+                "DBMS",
+                "COA",
+                "CN",
+                "ML",
+                "Math III",
+                "Python",
+              ].map((s, i) => (
                 <span
                   key={s}
                   className="px-3 py-1.5 border border-gray-600 text-gray-300 text-xs font-bold rounded-full hover:border-white hover:text-white transition-colors duration-150 cursor-pointer"
                 >
                   {s}
                 </span>
-              ),
-            )}
+              ))}
+            </div>
+          </div>
+          {/* Right image */}
+          {/* <Image
+            src="/studing-group-caricature.png"
+            alt="Resource Vault"
+            width={300}
+            height={300}
+            className="flex drop-shadow-2xl"
+          /> */}
+          <div className="hidden lg:flex flex-shrink-0 items-end justify-center rounded-2xl overflow-hidden p-4">
+            <Image
+              src="/studying-group-caricature.png"
+              alt="Resource Vault"
+              width={450}
+              height={450}
+              className="object-contain rounded-2xl"
+              priority
+            />
           </div>
         </div>
 
