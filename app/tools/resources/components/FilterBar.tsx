@@ -129,7 +129,11 @@ export default function FilterBar({
               active={activeType === t}
               onClick={() => onTypeChange(t)}
               color={
-                activeType === t && t !== "All" ? typeColors[t] : undefined
+                activeType === t
+                  ? t === "All"
+                    ? { bg: "#000", text: "#fff" } // ✅ force black for "All"
+                    : typeColors[t]
+                  : undefined
               }
             />
           ))}
